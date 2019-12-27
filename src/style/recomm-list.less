@@ -1,0 +1,59 @@
+.ant-page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  background: #ce3d3a;
+  padding: 9px 24px;
+  .anticon {
+    color: #fff;
+  }
+  .ant-page-header-heading-title{
+    font-size: 16px;
+    font-weight: unset;
+    color: #fff;
+  }
+}
+.recomm-song {
+  text-align: left;
+
+  h3 {
+    color: #333;
+
+    .anticon {
+      font-size: 20px;
+      color: #ce3d3a;
+      margin: 0 .5em;
+    }
+
+    span {
+      float: right;
+      margin-right: .5em;
+    }
+  }
+
+  ul {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 66px;
+    .recomm-item {
+      width: 30%;
+      margin-bottom: 10px;
+
+      dt {
+        position: relative;
+        width: 100%;
+        height: 9rem;
+        border: 1px solid #ddd;
+        background-size: cover;
+      }
+      dd{
+        font-size: 12px;
+      }
+    }
+  }
+}
