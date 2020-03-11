@@ -1,38 +1,53 @@
-import React from 'react'
-
-const Home = React.lazy(()=>import('./views/home' ))
-const Login = React.lazy(()=>import('./views/login' ))
-const dailyRecomm = React.lazy(()=>import('./views/daily-recomm' ))
-const recommList = React.lazy(()=>import('./views/recomm-list' ))
-const playList = React.lazy(()=>import('./views/play-list' ))
-const songList = React.lazy(()=>import('./views/song-list' ))
+import React,{createElement} from 'react'
+import { Spin } from 'antd';
+import Loadable from 'react-loadable';
 
 
+
+const dynamicWrapper = component => {
+    // () => import('module')
+    return Loadable({
+        loader: () => {
+            return component().then(raw => {
+                const Component = raw.view || raw.default;
+
+                return props => {
+                    return createElement(Component, {
+                        ...props
+                    });
+                };
+            });
+        },
+        loading: () => {
+            return <Spin size="large" className="global-spin" />;
+        }
+    });
+};
 export default [
     {
         path:'/',
         exact:true,
-        component:Home
+        component:dynamicWrapper(()=>import('./views/home' ))
     },
     {
         path:'/Login',
-        component:Login
+        component:dynamicWrapper(()=>import('./views/login' ))
     },
     {
         path:'/dailyRecomm',
-        component:dailyRecomm
+        component:dynamicWrapper(()=>import('./views/daily-recomm' ))
     },
     {
         path:'/recommList',
-        component:recommList
+        component:dynamicWrapper(()=>import('./views/recomm-list' ))
     },
     {
         path:'/playList',
-        component:playList
+        component:dynamicWrapper(()=>import('./views/play-list' ))
     },
     {
         path:'/songList',
-        component:songList
+        component:dynamicWrapper(()=>import('./views/song-list' ))
     }
 ]
 
