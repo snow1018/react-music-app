@@ -1,6 +1,7 @@
 import React from "react";
 import "../style/daily-recomm.less";
-import { Icon, Carousel } from "antd";
+import { Carousel } from "antd";
+import { createFromIconfontCN,AreaChartOutlined,DotChartOutlined,PieChartOutlined,LineChartOutlined } from '@ant-design/icons';
 import { BrowserRouter, Route, Link } from "react-router-dom";
 // import {HashRouter as Router, Route, Link, Switch} from 'react-router-dom'
 import httpApi from "../api/api";
@@ -46,32 +47,32 @@ class DailyRecomm extends React.Component {
               </div>
 
             ))
-          }
+          } 
 
         </Carousel>
         <div className="icon-list">
           <dl>
             <dt>
-              <Icon type="container" />
+              <AreaChartOutlined  />
             </dt>
             <dd>私人FM</dd>
           </dl>
           <dl>
             <dt>
-              <Icon type="calendar" />
+              <DotChartOutlined />
             </dt>
             <dd>每日歌曲推荐</dd>
           </dl>
           <dl>
             <dt>
-              <Icon type="bar-chart" />
+            <PieChartOutlined />
             </dt>
             <dd>云音乐新歌榜</dd>
           </dl>
         </div>
         <div className="recomm-song">
           <h3>
-            <Icon type="calendar" />
+            {/* <LineChartOutlined /> */}
             歌曲推荐 <span><Link path='' to='/recommList'>更多</Link>></span>
           </h3>
           <ul>

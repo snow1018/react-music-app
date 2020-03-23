@@ -1,4 +1,4 @@
-let common_url = 'http://192.168.15.51:3000'; //请求的url
+let common_url = 'http://192.168.15.40:3000'; //请求的url
 let header = {
     "Content-Type": "application/x-www-form-urlencoded",
     "Cache-Control": "no-cache",

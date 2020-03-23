@@ -1,12 +1,13 @@
 import React from "react";
 import "../style/home.less";
 import { Icon, Tabs } from "antd";
+import { createFromIconfontCN,UnorderedListOutlined,BarChartOutlined } from '@ant-design/icons';
 import { AutoComplete } from 'antd';
 import PopLeft from "../views/pop-left";
 import DailyRecomm from "../views/daily-recomm";
 import httpApi from "../api/api";
 
-const IconFont = Icon.createFromIconfontCN({
+const IconFont = createFromIconfontCN({
   scriptUrl: "//at.alicdn.com/t/font_1528553_cdzlv5y0gpr.js"
 });
 
@@ -128,7 +129,7 @@ class Home extends React.Component {
       <div className="home">
         <div className="head-wrap">
           <div className="head">
-            <IconFont
+            <UnorderedListOutlined
               className="icon-h icon-hl"
               type="icon-mulu"
               onClick={this.showDrawer}
@@ -147,7 +148,7 @@ class Home extends React.Component {
                 placeholder="input here"
               />
             </div>
-            <Icon className="icon-h icon-hl" type="bar-chart" />
+            <BarChartOutlined className="icon-h icon-hl" type="bar-chart" />
           </div>
         </div>
         <div className="content">

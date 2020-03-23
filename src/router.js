@@ -8,6 +8,7 @@ const dynamicWrapper = component => {
     // () => import('module')
     return Loadable({
         loader: () => {
+            console.log(111)
             return component().then(raw => {
                 const Component = raw.view || raw.default;
 
@@ -19,7 +20,7 @@ const dynamicWrapper = component => {
             });
         },
         loading: () => {
-            return <Spin size="large" className="global-spin" />;
+            return 111;
         }
     });
 };
